@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Reports</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f4ff;
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .item {
+            background: white;
+            padding: 20px;
+            margin: 15px auto;
+            width: 70%;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+        .lost {
+            color: red;
+            font-weight: bold;
+        }
+        .found {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Campus Lost & Found Reports</h2>
+
+{% for item in items %}
+<div class="item">
+    <h3>{{ item.item_name }}</h3>
+
+    <p>Category: {{ item.category }}</p>
+    <p>Date: {{ item.date }}</p>
+    <p>Location: {{ item.location }}</p>
+    <p>Description: {{ item.description }}</p>
+
+    {% if item.item_type == "Lost" %}
+        <p class="lost">LOST ITEM</p>
+    {% else %}
+        <p class="found">FOUND ITEM</p>
+    {% endif %}
+</div>
+{% else %}
+<p style="text-align:center;">No reports available.</p>
+{% endfor %}
+
+</body>
+</html>

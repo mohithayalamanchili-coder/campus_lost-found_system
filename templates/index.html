@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Lost & Found</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6ff;
+            color: #222;
+        }
+
+        nav {
+            background: #252b68;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+            background: linear-gradient(135deg, #303f9f, #7654c9);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 14px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background: #ff8c42;
+        }
+
+        .buttons a:hover {
+            background: #e8752d;
+        }
+
+        .features {
+            padding: 50px 8%;
+            text-align: center;
+        }
+
+        .features h2 {
+            margin-bottom: 30px;
+            color: #252b68;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 240px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #ddd;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #303f9f;
+        }
+
+        .card p {
+            margin-bottom: 18px;
+            color: #555;
+        }
+
+        .card a {
+            display: inline-block;
+            color: #303f9f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #252b68;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Campus Lost & Found</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/items">All Reports</a>
+        <a href="/matches">AI Matching</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <h1>Lost Something? Find It Here!</h1>
+
+    <p>
+        A smart campus platform to report lost items
+        and reconnect them with their owners.
+    </p>
+
+    <div class="buttons">
+        <a href="/lost">Report Lost Item</a>
+        <a href="/found">Report Found Item</a>
+    </div>
+
+</section>
+
+<section class="features">
+
+    <h2>Our Features</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Report Lost</h3>
+            <p>Report your missing belongings easily.</p>
+            <a href="/lost">Get Started →</a>
+        </div>
+
+        <div class="card">
+            <h3>Report Found</h3>
+            <p>Help others by reporting found items.</p>
+            <a href="/found">Get Started →</a>
+        </div>
+
+        <div class="card">
+            <h3>All Reports</h3>
+            <p>View all lost and found reports.</p>
+            <a href="/items">View Reports →</a>
+        </div>
+
+        <div class="card">
+            <h3>AI Matching</h3>
+            <p>Find possible matches using AI technology.</p>
+            <a href="/matches">Find Matches →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>Campus Lost & Found System | AI Powered Project</p>
+</footer>
+
+</body>
+</html>

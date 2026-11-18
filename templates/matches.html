@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Item Matching</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f4ff;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #303f9f;
+        }
+
+        .match-card {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 70%;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        .score {
+            color: green;
+            font-weight: bold;
+        }
+
+        .lost {
+            color: red;
+        }
+
+        .found {
+            color: green;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #303f9f;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 5px;
+        }
+
+        .contact-btn:hover {
+            background: #1a237e;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>AI-Powered Item Matching</h2>
+
+{% for match in matches %}
+
+<div class="match-card">
+
+    <h3>Possible Match Found!</h3>
+
+    <h4 class="lost">Lost Item</h4>
+    <p>Item: {{ match.lost.item_name }}</p>
+    <p>Category: {{ match.lost.category }}</p>
+    <p>Location: {{ match.lost.location }}</p>
+    <p>Description: {{ match.lost.description }}</p>
+
+    <hr>
+
+    <h4 class="found">Found Item</h4>
+    <p>Item: {{ match.found.item_name }}</p>
+    <p>Category: {{ match.found.category }}</p>
+    <p>Location: {{ match.found.location }}</p>
+    <p>Description: {{ match.found.description }}</p>
+
+    <hr>
+
+    <p class="score">
+        AI Similarity: {{ match.score }}%
+    </p>
+
+    <h4>Contact Details</h4>
+
+    {% if match.lost.email %}
+        <a class="contact-btn"
+           href="mailto:{{ match.lost.email }}">
+           Contact Lost Item Reporter
+        </a>
+    {% endif %}
+
+    {% if match.found.email %}
+        <a class="contact-btn"
+           href="mailto:{{ match.found.email }}">
+           Contact Found Item Reporter
+        </a>
+    {% endif %}
+
+</div>
+
+{% else %}
+
+<p style="text-align:center;">
+    No possible matches found yet.
+</p>
+
+{% endfor %}
+
+</body>
+</html>
